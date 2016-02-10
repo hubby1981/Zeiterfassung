@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_today" android:icon="@drawable/heute"
+            android:title="Heute" />
+        <item android:id="@+id/nav_week" android:icon="@drawable/woche"
+            android:title="Woche" />
+        <item android:id="@+id/nav_month" android:icon="@drawable/monat"
+            android:title="Monat" />
+        <item android:id="@+id/nav_year" android:icon="@drawable/jahr"
+            android:title="Jahr" />
+    </group>
+    <item android:title="Fehlzeiten">
+        <menu>
+            <item android:id="@+id/nav_krank" android:icon="@drawable/krank"
+                android:title="Krankmeldung" />
+            <item android:id="@+id/nav_urlaub" android:icon="@drawable/urlaub"
+            android:title="Urlaub" />
+            <item android:id="@+id/nav_sonder" android:icon="@drawable/sonderfall"
+                android:title="Sonderfall" />
+        </menu>
+    </item>
+    <item android:title="Kommunikation">
+        <menu>
+            <item android:id="@+id/nav_mitteilungen" android:icon="@drawable/mitteilungen"
+                android:title="Mitteilungen" />
+            <item android:id="@+id/nav_mails" android:icon="@drawable/mail"
+                android:title="Nachrichten" />
+        </menu>
+    </item>
+
+</menu>
