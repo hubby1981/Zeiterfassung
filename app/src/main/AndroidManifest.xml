@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.collex.zeit.zeiterfassung" >
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,6 +27,23 @@
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
             android:parentActivityName=".Hauptbereich" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.collex.zeit.zeiterfassung.Hauptbereich" />
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:parentActivityName=".Hauptbereich" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.collex.zeit.zeiterfassung.Hauptbereich" />
+        </activity>
+        <activity
+            android:name=".HeuteActivity"
+            android:label="@string/title_activity_heute"
+            android:parentActivityName=".Hauptbereich"
+            android:theme="@style/AppTheme.NoActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.collex.zeit.zeiterfassung.Hauptbereich" />

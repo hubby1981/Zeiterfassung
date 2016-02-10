@@ -57,6 +57,7 @@ public class Hauptbereich extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.hauptbereich, menu);
+
         return true;
     }
 
@@ -73,7 +74,11 @@ public class Hauptbereich extends AppCompatActivity
             startActivity(intent);
             return true;
         }
-
+        if (id == R.id.action_anmelden) {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -84,7 +89,8 @@ public class Hauptbereich extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_today) {
-
+            Intent intent = new Intent(this, HeuteActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_week) {
 
         } else if (id == R.id.nav_month) {
