@@ -24,7 +24,7 @@
     <item android:title="Kommunikation">
         <menu>
             <item android:id="@+id/nav_mitteilungen" android:icon="@drawable/mitteilungen"
-                android:title="Mitteilungen" />
+                android:title="Benachrichtigungen" />
             <item android:id="@+id/nav_mails" android:icon="@drawable/mail"
                 android:title="Nachrichten" />
         </menu>

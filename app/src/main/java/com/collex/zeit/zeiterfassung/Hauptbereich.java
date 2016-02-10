@@ -1,5 +1,6 @@
 package com.collex.zeit.zeiterfassung;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -68,6 +69,8 @@ public class Hauptbereich extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
             return true;
         }
 
@@ -81,7 +84,7 @@ public class Hauptbereich extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_today) {
-            
+
         } else if (id == R.id.nav_week) {
 
         } else if (id == R.id.nav_month) {
@@ -102,6 +105,7 @@ public class Hauptbereich extends AppCompatActivity
         else if (id == R.id.nav_mails) {
 
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
