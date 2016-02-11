@@ -26,12 +26,12 @@ public abstract class Flow {
         try {
             if (booked.size() == 0) {
 
-                booked.add(start.newInstance());
+                booked.add(start.newInstance().rebook(TH.TICKS));
 
             } else {
                 Entry last = booked.get(booked.size() - 1);
                 if (last.getPossibleEntries().contains(entry)) {
-                    booked.add(last.getNext(entry));
+                    booked.add(last.getNext(entry, TH.TICKS));
                 }
             }
         } catch (InstantiationException e) {
@@ -39,6 +39,8 @@ public abstract class Flow {
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
+        if(!TH.TIME_NOT_BACK)
+            TH.TICKS=0;
     }
 
     public List<Class<? extends Entry>> getPossibleNext() {

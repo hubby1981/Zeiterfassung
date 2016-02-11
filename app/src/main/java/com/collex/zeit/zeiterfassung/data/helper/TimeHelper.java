@@ -7,6 +7,7 @@ import android.text.format.Time;
  */
 public class TimeHelper {
 
+
     public static long getActMillis(){
         Time t = new Time();
         t.setToNow();

@@ -7,6 +7,12 @@ import com.collex.zeit.zeiterfassung.data.Entry;
  */
 public class Gehen extends Entry {
 
+    public Gehen(){
+        this(0);
+    }
+    public Gehen(long booking) {
+        super(booking);
+    }
 
     @Override
     protected void registerEntries() {

@@ -9,10 +9,22 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_heute2"
     tools:context="com.collex.zeit.zeiterfassung.heute2Activity">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zeit einstellen"
 
+        android:onClick="time"
+        style="@style/ButtonThemeBorderless"
+        />
     <ListView
+android:layout_marginTop="60dp"
         android:id="@+id/actionsToday"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:scrollbars="vertical"></ListView>
+        android:scrollbars="vertical"
+        android:layout_marginBottom="90dp"
+
+        ></ListView>
+
 </RelativeLayout>

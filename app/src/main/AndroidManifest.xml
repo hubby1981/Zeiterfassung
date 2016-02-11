@@ -57,6 +57,17 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.collex.zeit.zeiterfassung.Hauptbereich" />
         </activity>
+        <activity android:name=".TimeActivity"
+            android:label="Zeitpunkt einstellen"
+            android:parentActivityName=".heute2Activity"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.collex.zeit.zeiterfassung.heute2Activity" />
+
+
+            >
+        </activity>
     </application>
 
 </manifest>

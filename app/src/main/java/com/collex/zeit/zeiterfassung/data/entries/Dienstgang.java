@@ -7,6 +7,13 @@ import com.collex.zeit.zeiterfassung.data.Entry;
  */
 public class Dienstgang extends Entry {
 
+    public Dienstgang(){
+        this(0);
+    }
+    public Dienstgang(long booking) {
+        super(booking);
+    }
+
     @Override
     protected void registerEntries() {
         entries.add(Gehen.class);

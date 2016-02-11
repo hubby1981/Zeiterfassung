@@ -1,6 +1,7 @@
 package com.collex.zeit.zeiterfassung;
 
 import android.app.LauncherActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,14 +13,20 @@ import android.widget.ListView;
 
 import com.collex.zeit.zeiterfassung.data.Entry;
 import com.collex.zeit.zeiterfassung.data.Flow;
+import com.collex.zeit.zeiterfassung.data.TH;
 import com.collex.zeit.zeiterfassung.data.entries.Dienstgang;
 import com.collex.zeit.zeiterfassung.data.entries.Gehen;
 import com.collex.zeit.zeiterfassung.data.entries.Kommen;
 import com.collex.zeit.zeiterfassung.data.flows.TagFlow;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 public class heute2Activity extends AppCompatActivity {
-    private Flow day = new TagFlow();
-    private ArrayAdapter<String> adapter;
+    private Flow day;
+private ArrayList<String> list=new ArrayList<>();
+private ArrayAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +35,27 @@ public class heute2Activity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.activity_heute2);
+        ListView v = (ListView) findViewById(R.id.actionsToday);
+        adapter = new ArrayAdapter(this,R.layout.simple_list,list);
+
+        v.setAdapter(adapter);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getFlow();
         checkButtons();
 
+    }
+
+    private void getFlow(){
+
+        String key = String.valueOf(new Date().getDay())+String.valueOf(new Date().getMonth())+String.valueOf(new Date().getYear());
+        if(TH.FLOWS.containsKey(key))
+            day=TH.FLOWS.get(key);
+        else
+        {
+            day=new TagFlow();
+            TH.FLOWS.put(key,day);
+        }
     }
 
     public void checkButtons() {
@@ -48,16 +72,18 @@ public class heute2Activity extends AppCompatActivity {
                 b.setVisibility(View.VISIBLE);
             }
         }
-        ListView v = (ListView) findViewById(R.id.actionsToday);
 
-        v.setAdapter(adapter);
 
-        adapter.clear();
-
+        list.clear();
         for(Entry e : day.getBooked()){
-            adapter.add(e.getClass().getSimpleName());
+            list.add(e.toListItem());
         }
+        adapter.notifyDataSetChanged();
+    }
 
+    public void time(View view){
+        Intent intent = new Intent(this, TimeActivity.class);
+        startActivity(intent);
     }
 
     public void kommen(View view) {
