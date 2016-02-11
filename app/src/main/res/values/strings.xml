@@ -67,6 +67,10 @@
         completions."
     </string>
     <string name="title_activity_heute">Ansicht: Heute</string>
+    <string name="text_today_button_action1">Kommen</string>
+    <string name="text_today_button_action2">Gehen</string>
+    <string name="text_today_button_action3">Dienstgang</string>
+
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -156,4 +160,5 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="title_activity_heute2">Heute</string>
 </resources>

@@ -8,10 +8,17 @@
     android:layout_height="match_parent"
     tools:context="com.collex.zeit.zeiterfassung.HeuteActivity">
 
-    <ListView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
-    </ListView>
+
+
+
+
+
+    </LinearLayout>
+
 
 </android.support.v4.widget.NestedScrollView>

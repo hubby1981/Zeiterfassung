@@ -14,4 +14,18 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="ButtonTheme" parent="Base.Widget.AppCompat.Button.Colored">
+
+    </style>
+    <style name="ButtonThemeAccent" parent="Base.Widget.AppCompat.Button.Colored">
+
+        <item name="android:colorAccent">#9C27B0</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="android:textColor">@android:color/white</item>
+
+
+    </style>
+    <style name="ButtonThemeBorderless" parent="Base.Widget.AppCompat.Button.Borderless.Colored">
+
+    </style>
 </resources>

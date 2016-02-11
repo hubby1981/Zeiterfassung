@@ -48,6 +48,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.collex.zeit.zeiterfassung.Hauptbereich" />
         </activity>
+        <activity
+            android:name=".heute2Activity"
+            android:label="@string/title_activity_heute2"
+            android:parentActivityName=".Hauptbereich"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.collex.zeit.zeiterfassung.Hauptbereich" />
+        </activity>
     </application>
 
 </manifest>

@@ -14,6 +14,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.collex.zeit.zeiterfassung.data.Flow;
+import com.collex.zeit.zeiterfassung.data.entries.Kommen;
+import com.collex.zeit.zeiterfassung.data.flows.TagFlow;
+
 public class Hauptbereich extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -41,6 +45,9 @@ public class Hauptbereich extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+
     }
 
     @Override
@@ -89,7 +96,7 @@ public class Hauptbereich extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_today) {
-            Intent intent = new Intent(this, HeuteActivity.class);
+            Intent intent = new Intent(this, heute2Activity.class);
             startActivity(intent);
         } else if (id == R.id.nav_week) {
 

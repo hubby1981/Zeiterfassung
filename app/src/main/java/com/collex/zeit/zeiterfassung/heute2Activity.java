@@ -13,28 +13,21 @@ import com.collex.zeit.zeiterfassung.data.entries.Gehen;
 import com.collex.zeit.zeiterfassung.data.entries.Kommen;
 import com.collex.zeit.zeiterfassung.data.flows.TagFlow;
 
-public class HeuteActivity extends AppCompatActivity {
+public class heute2Activity extends AppCompatActivity {
     private Flow day = new TagFlow();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_heute);
+        setContentView(R.layout.activity_heute2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         checkButtons();
-    }
 
+    }
 
     public void checkButtons(){
         findViewById(R.id.Kommen).setVisibility(View.INVISIBLE);
@@ -43,12 +36,12 @@ public class HeuteActivity extends AppCompatActivity {
 
         for(Class<?> e : day.getPossibleNext()){
 
-           String id = e.getSimpleName();
+            String id = e.getSimpleName();
             View b = findViewById(getResources().getIdentifier(id,"id","com.collex.zeit.zeiterfassung"));
             if(b!=null){
                 b.setVisibility(View.VISIBLE);
             }
-       }
+        }
 
     }
 
