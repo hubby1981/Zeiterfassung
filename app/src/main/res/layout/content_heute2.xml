@@ -10,4 +10,9 @@
     tools:showIn="@layout/activity_heute2"
     tools:context="com.collex.zeit.zeiterfassung.heute2Activity">
 
+    <ListView
+        android:id="@+id/actionsToday"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical"></ListView>
 </RelativeLayout>

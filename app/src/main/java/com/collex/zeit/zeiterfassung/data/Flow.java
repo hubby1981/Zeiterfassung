@@ -51,6 +51,10 @@ public abstract class Flow {
         return result;
     }
 
+    public List<Entry> getBooked(){
+        return booked;
+    }
+
 
     private double getSoll() {
         List<Entry> all = new ArrayList<>();
