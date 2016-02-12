@@ -7,7 +7,10 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -24,24 +27,40 @@ import java.util.Date;
 
 public class heute2Activity extends AppCompatActivity {
     private Flow day;
-private ArrayList<Entry> list=new ArrayList<>();
+
 private ArrayAdapter adapter;
-
-
+private int oldX=0;
+private boolean touch=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_heute2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getFlow();
 
         ListView v = (ListView) findViewById(R.id.actionsToday);
-        adapter = new EntryListAdapter(this,R.layout.simple_list,list);
+        adapter = new EntryListAdapter(this,R.layout.simple_list,day.getBooked());
 
         v.setAdapter(adapter);
+        v.setChoiceMode(AbsListView.CHOICE_MODE_SINGLE);
+        v.setItemsCanFocus(true);
+        v.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                if ((day.getBooked().size() - 1) == position) {
+                    day.getBooked().remove(position);
+
+                    checkButtons();
+
+                }
+                return false;
+            }
+        });
+
+
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getFlow();
         checkButtons();
 
     }
@@ -74,10 +93,7 @@ private ArrayAdapter adapter;
         }
 
 
-        list.clear();
-        for(Entry e : day.getBooked()){
-            list.add(e);
-        }
+
         adapter.notifyDataSetChanged();
     }
 

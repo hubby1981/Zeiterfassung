@@ -28,6 +28,7 @@ public class EntryListAdapter extends ArrayAdapter<Entry> {
         super(context, resource, objects);
         this.context = context;
         this.objects = objects;
+
     }
 
     @Override
@@ -48,4 +49,5 @@ public class EntryListAdapter extends ArrayAdapter<Entry> {
             i1.setImageResource(R.drawable.dienstgang2);
         return rowView;
     }
+
 }
