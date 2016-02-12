@@ -24,7 +24,7 @@ import java.util.Date;
 
 public class heute2Activity extends AppCompatActivity {
     private Flow day;
-private ArrayList<String> list=new ArrayList<>();
+private ArrayList<Entry> list=new ArrayList<>();
 private ArrayAdapter adapter;
 
 
@@ -36,7 +36,7 @@ private ArrayAdapter adapter;
         setSupportActionBar(toolbar);
 
         ListView v = (ListView) findViewById(R.id.actionsToday);
-        adapter = new ArrayAdapter(this,R.layout.simple_list,list);
+        adapter = new EntryListAdapter(this,R.layout.simple_list,list);
 
         v.setAdapter(adapter);
 
@@ -76,7 +76,7 @@ private ArrayAdapter adapter;
 
         list.clear();
         for(Entry e : day.getBooked()){
-            list.add(e.toListItem());
+            list.add(e);
         }
         adapter.notifyDataSetChanged();
     }
